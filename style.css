@@ -1,0 +1,211 @@
+/* style.css */
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100;
+}
+/* الهيدر */
+.navbar {
+    background-color: #bfa46f; /* لون ذهبي كلاسيكي */
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.logo .s1 {
+    font-weight: normal;
+}
+
+/* قسم الترحيب */
+.hero {
+    position: relative;
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh; /* يخليها تمتد كل الشاشة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.hero .content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 22px;
+}
+
+/* الساب تكست مثبت بأسفل الشاشة */
+.hero .sub-text {
+    position: absolute;
+    bottom: 10px; /* المسافة عن الحافة السفلية */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #fff;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+
+/* قسم نبذة عن الشركة */
+
+.about {
+    position: relative;
+    background-color: #222; /* اللون الأسود الكامل */
+    width: 100%;            /* يغطي كامل الشاشة */
+    padding: 80px 20px;     /* مسافة فوق وتحت + مسافة بسيطة من الجانبين */
+    box-sizing: border-box; /* لضمان أن padding لا يوسع العرض */
+    color: #fff;
+}
+
+.about .overlay {
+    max-width: 1200px; /* يقيد النصوص حتى لا تمتد كثير على الشاشات الكبيرة */
+    margin: 0 auto;    /* مركز النصوص */
+}
+
+.about h2 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* قسم التواصل */
+
+.contact {
+    position: relative;
+    background-color: #bfa46f; /* الخلفية كاملة */
+    width: 100%;
+    padding: 80px 20px 20px 20px ;     /* مسافة فوق وتحت + حافة بسيطة على الجانبين */
+    box-sizing: border-box; /* لضمان أن padding لا يزيد العرض */
+    color: #ffffff;
+    text-align: right;
+}
+
+.contact h2 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 25px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;       /* يقيد عرض النصوص */
+       
+}
+
+.contact ul li {
+    margin-bottom: 15px;
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+    text-align: right;
+}
+
+.contact ul li a {
+    color: #070022;        /* لون ذهبي للنصوص القابلة للضغط */
+    text-decoration: none;
+}
+
+.contact ul li a:hover {
+    text-decoration: underline;
+}
+
+/* الفوتر */
+footer {
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    font-family: 'Amiri', serif;
+    margin: 0;
+}
+
+/* استجابة الهاتف */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .hero {
+        height: 400px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;   /* أصغر ليتناسب مع الموبايل */
+    }
+
+    .hero p {
+        font-size: 14px;   /* أصغر ليتناسب مع الموبايل */
+    }
+
+    .hero .sub-text {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(10px, 4vw, 16px); /* حجم ديناميكي بين 10px و16px حسب عرض الشاشة */
+        max-width: 90%;                     /* يبقى داخل عرض الخلفية */
+        white-space: nowrap;                 /* سطر واحد */
+        overflow: hidden;                    /* لا يمتد خارج الخلفية */
+        text-overflow: clip;                 /* بدون نقاط ... */
+        z-index: 2;
+    }
+
+    }
+
+    /* Contact */
+    .contact {
+        padding: 40px 10px 20px 10px;  
+        width: auto;                    
+    }
+
+    .contact h2 {
+        font-size: 20px;
+        text-align: right;              
+    }
+
+    .contact ul {
+        max-width: none;      /* جزء جانبي صغير */
+        margin-left: auto;     
+        margin-right: 0;
+        padding-left: 0;
+    }
+
+    .contact ul li {
+        font-size: 14px;       /* نصوص أصغر */
+        text-align: right; 
+        white-space: nowrap;    
+    }
